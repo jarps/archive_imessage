@@ -40,7 +40,7 @@ for i in range(1, max_chat_id + 1):
         if is_from_me == 1:
             msg += 'Me: '
         else:
-            msg += '{}: '.format(sender_dict[handle_id])
+            msg += '{}: '.format(sender_dict.get(handle_id, 'Unknown')) # compensate for lost database entry
         msg += text + '\n'
         chatlog.write(msg)
 
